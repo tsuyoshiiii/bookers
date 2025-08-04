@@ -1,6 +1,23 @@
-<h1>New Book</h1>
+<h3>Books</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th></th>
+      </tr>
+    </thead>
 
-<%= form_with model: Book.new do |f| %>
+    <tbody>
+
+      
+    
+    </tbody>
+  </table>
+
+<h4>New Book</h4>
+<%= form_with model: @book, url: books_path do |f| %>
+  <%= f.hidden_field :book %>
   <p>Title</p>
   <%= f.text_field :title %>
 	
@@ -11,3 +28,4 @@
   <%= f.submit 'Create Book' %>
   <p/>
 <% end %>
+
