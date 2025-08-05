@@ -26,9 +26,19 @@
   </table>
 
 <h4>New Book</h4>
-  <div>
-    <%= flash[:error] %>
-  </div>
+
+<div>
+<%= flash[:error] %>
+</div>
+
+<% if @book && @book.errors.any? %>
+<ul>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
 
 <%= form_with model: @book, url: books_path do |f| %>
   <p>Title</p>
