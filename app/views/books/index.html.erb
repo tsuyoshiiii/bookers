@@ -26,6 +26,10 @@
   </table>
 
 <h4>New Book</h4>
+  <div>
+    <%= flash[:error] %>
+  </div>
+
 <%= form_with model: @book, url: books_path do |f| %>
   <p>Title</p>
   <%= f.text_field 'book[title]' %>
