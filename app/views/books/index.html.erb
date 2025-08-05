@@ -14,7 +14,7 @@
             <td> <%= book.title %> </td>
             <td> <%= book.body %> </td>
             <td> <%= link_to "Show", book_path(book.id) %>
-                 <%= link_to "Edit", book_path(book.id) %>
+                 <%= link_to "Edit", edit_book_path(book.id) %>
                  <%= link_to "Destroy",
               book_path(book.id), 
               method: :delete, 
@@ -27,12 +27,11 @@
 
 <h4>New Book</h4>
 <%= form_with model: @book, url: books_path do |f| %>
-  <%= f.hidden_field :book %>
   <p>Title</p>
-  <%= f.text_field :title %>
+  <%= f.text_field 'book[title]' %>
 	
   <p>Body</p>
-  <%= f.text_area :body %>
+  <%= f.text_area 'book[body]' %>
 	
   <p>
   <%= f.submit 'Create Book' %>
