@@ -26,12 +26,8 @@
   </table>
 
 <h4>New Book</h4>
-
-<div>
-<%= flash[:error] %>
-</div>
-
 <% if @book && @book.errors.any? %>
+<%= @book.errors.count %>error prohibited this book from being saved:
 <ul>
   <% @book.errors.full_messages.each do |message| %>
     <li><%= message %></li>
